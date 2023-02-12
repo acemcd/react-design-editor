@@ -256,7 +256,7 @@ class ApiService {
     return new Promise(async (resolve, reject) => {
       try {
         const { data } = await this.base.get("/fonts")
-        resolve(data.fonts) 
+        resolve(data.fonts)
       } catch (err) {
         reject(err)
       }

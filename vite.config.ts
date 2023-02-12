@@ -5,6 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  optimizeDeps: {
+    include: ["@layerhub-io/react", "@layerhub-io/use-timer", "@layerhub-io/react-custom-scrollbar"],
+  },
   server: {
     proxy: {
       "/api": {
