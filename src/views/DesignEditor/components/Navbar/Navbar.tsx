@@ -149,7 +149,7 @@ const Navbar = () => {
       } else if (editorType === "PRESENTATION") {
         return parsePresentationJSON()
       } else {
-      return parseVideoJSON()
+        return parseVideoJSON()
       }
     }
   }
@@ -325,15 +325,6 @@ const Navbar = () => {
             kind={KIND.tertiary}
           >
             <Github size={24} />
-          </Button>
-
-          <Button
-            style={{ marginLeft: "0.5rem" }}
-            size="compact"
-            onClick={() => window.location.replace("https://editor.layerhub.io")}
-            kind={KIND.primary}
-          >
-            Try PRO
           </Button>
         </Block>
       </Container>

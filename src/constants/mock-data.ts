@@ -1526,3 +1526,33 @@ export const pixabayImages = [
     userImageURL: "https://cdn.pixabay.com/user/2022/04/06/21-10-26-53_250x250.jpg",
   },
 ]
+
+export interface IUpload {
+  id: string
+  contentType: string
+  folder: string
+  name: string
+  type: string
+  url: string
+}
+
+export const uploads = [
+  {
+    id: "5f9f5b5b-8b5e-4b5f-8f5f-8b5e4b5f8f5f",
+    contentType: "image/jpeg",
+    folder: "uploads",
+    name: "5f9f5b5b-8b5e-4b5f-8f5f-8b5e4b5f8f5f.jpg",
+    type: "image",
+    preview: "jamiejackson_012-preview.png",
+    url: "jamiejackson_012-crop.png",
+  },
+  {
+    id: "5f9f5b5b-8b5e-4b5f-8f5f-8b5e4b5f8f5f",
+    contentType: "image/jpeg",
+    folder: "uploads",
+    name: "5f9f5b5b-8b5e-4b5f-8f5f-8b5e4b5f8f5f.jpg",
+    type: "image",
+    preview: "jamiejackson_hc028-preview.jpg",
+    url: "jamiejackson_hc028.jpg",
+  },
+]

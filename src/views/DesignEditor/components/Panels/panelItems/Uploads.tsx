@@ -8,12 +8,14 @@ import { useEditor } from "@layerhub-io/react"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
 import { nanoid } from "nanoid"
 import { captureFrame, loadVideoResource } from "~/utils/video"
+import { uploads } from "~/constants/mock-data"
 import { ILayer } from "@layerhub-io/types"
 import { toBase64 } from "~/utils/data"
+import { IUpload } from "~/interfaces/editor"
 
 export default function () {
   const inputFileRef = React.useRef<HTMLInputElement>(null)
-  const [uploads, setUploads] = React.useState<any[]>([])
+  // const [uploads, setUploads] = React.useState<any[]>([])
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
 
@@ -38,7 +40,7 @@ export default function () {
       type: type,
     }
 
-    setUploads([...uploads, upload])
+    // setUploads([...uploads, upload])
   }
 
   const handleInputFileRefClick = () => {
@@ -46,12 +48,32 @@ export default function () {
   }
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log({ msg: "handleFileInput", e })
     handleDropFiles(e.target.files!)
   }
 
-  const addImageToCanvas = (props: Partial<ILayer>) => {
-    editor.objects.add(props)
+  const addImageToCanvas = (props: IUpload) => {
+    if (editor) {
+      const options = {
+        type: "StaticImage",
+        src: props.url,
+      }
+      editor.objects.add(options)
+    }
   }
+
+  // const addObject = React.useCallback(
+  //   (url: string) => {
+  //     if (editor) {
+  //       const options = {
+  //         type: "StaticImage",
+  //         src: url,
+  //       }
+  //       editor.objects.add(options)
+  //     }
+  //   },
+  //   [editor]
+  // )
   return (
     <DropZone handleDropFiles={handleDropFiles}>
       <Block $style={{ flex: 1, display: "flex", flexDirection: "column" }}>

@@ -7,19 +7,19 @@ import AngleDoubleLeft from "~/components/Icons/AngleDoubleLeft"
 import Scrollable from "~/components/Scrollable"
 import { graphics } from "~/constants/mock-data"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
+import { nanoid } from "nanoid"
 
 const Elements = () => {
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
 
-  const addObject = React.useCallback(
-    (item: any) => {
-      if (editor) {
-        editor.objects.add(item)
-      }
-    },
-    [editor]
-  )
+  const addObject = (item: any) => {
+    if (editor) {
+      const id = nanoid()
+      console.log({ msg: "addObject", item, id })
+      editor.objects.add({ id, ...item })
+    }
+  }
 
   return (
     <Block $style={{ flex: 1, display: "flex", flexDirection: "column" }}>
