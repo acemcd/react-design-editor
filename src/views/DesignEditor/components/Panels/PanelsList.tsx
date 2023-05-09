@@ -12,6 +12,7 @@ const Container = styled("div", (props) => ({
   width: "80px",
   backgroundColor: props.$theme.colors.primary100,
   display: "flex",
+  flex: "none",
 }))
 
 const PanelsList = () => {
@@ -57,7 +58,7 @@ const PanelListItem = ({ label, icon, activePanel, name }: any) => {
         alignItems: "center",
         flexDirection: "column",
         justifyContent: "center",
-        fontFamily: "Uber Move Text",
+        fontFamily: "Poppins",
         fontWeight: 500,
         fontSize: "0.8rem",
         userSelect: "none",
