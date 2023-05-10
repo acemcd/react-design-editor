@@ -11,7 +11,7 @@ class ApiService {
   base: AxiosInstance
   constructor() {
     this.base = axios.create({
-      baseURL: "https://api.layerhub.io/api",
+      baseURL: "http://localhost:8080/api",
     })
   }
 

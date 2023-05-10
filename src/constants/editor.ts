@@ -1,4 +1,5 @@
 import { ILayer } from "@layerhub-io/types"
+const baseURL = "http://localhost:8080/public"
 
 export const SecondLevelMenus = ["FontFamily"]
 export const FirstLevelMenus = ["Background"]
@@ -3542,7 +3543,7 @@ export const sampleFrames = [
     width: 1024,
     height: 768,
     unit: "px",
-    preview: "https://ik.imagekit.io/scenify/social-presentation-4x3.svg",
+    preview: `${baseURL}/templates/social-presentation-4x3.jpg`,
   },
   {
     id: 2,
@@ -3550,7 +3551,7 @@ export const sampleFrames = [
     width: 1920,
     height: 1080,
     unit: "px",
-    preview: "https://ik.imagekit.io/scenify/social-presentation-16x9.svg",
+    preview: `${baseURL}/templates/template-16x9.svg`,
   },
   {
     id: 3,
@@ -3558,7 +3559,7 @@ export const sampleFrames = [
     width: 1080,
     height: 1920,
     unit: "px",
-    preview: "https://ik.imagekit.io/scenify/social-social-media-story.svg",
+    preview: `${baseURL}/templates/template-9x16.svg`,
   },
   {
     id: 4,

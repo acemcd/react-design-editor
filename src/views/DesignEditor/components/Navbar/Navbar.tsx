@@ -149,7 +149,7 @@ const Navbar = () => {
       } else if (editorType === "PRESENTATION") {
         return parsePresentationJSON()
       } else {
-      return parseVideoJSON()
+        return parseVideoJSON()
       }
     }
   }

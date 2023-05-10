@@ -281,11 +281,14 @@ const ResizeTemplate = () => {
             <Tab title="Preset size">
               <Block $style={{ width: "100%", height: "400px" }}>
                 <Scrollbar>
+                  {/* <Block $style={{ display: "flex" }}> */}
                   <Block $style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
                     {sampleFrames.map((sampleFrame, index) => (
                       <Block
                         onClick={() => setSelectedFrame(sampleFrame)}
                         $style={{
+                          display: "flex",
+                          flexDirection: "column",
                           padding: "0.5rem",
                           backgroundColor: selectedFrame.id === sampleFrame.id ? "rgb(243,244,245)" : "#ffffff",
                           ":hover": {
@@ -297,13 +300,13 @@ const ResizeTemplate = () => {
                       >
                         <Block
                           $style={{
-                            height: "120px",
+                            height: "100%",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                           }}
                         >
-                          <img src={sampleFrame.preview} />
+                          <img style={{ height: "144px" }} src={sampleFrame.preview} />
                         </Block>
                         <Block $style={{ fontSize: "13px", textAlign: "center" }}>
                           <Block $style={{ fontWeight: 500 }}>{sampleFrame.name}</Block>

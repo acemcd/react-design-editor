@@ -1,3 +1,5 @@
+const baseURL = "http://localhost:8080/public"
+
 export const graphics = [
   {
     left: 0,
@@ -12,7 +14,7 @@ export const graphics = [
     path: [["M", 60, 0], ["L", 0, 0], ["L", 0, 60], ["L", 60, 60], ["L", 60, 0], ["Z"]],
     fill: "#CBCBCB",
     metadata: {},
-    preview: "https://ik.imagekit.io/scenify/1635011325399_603749.png",
+    preview: `${baseURL}/elements/square.png`,
     id: "E2mcHFkwGA-MTJcfl3Abs",
   },
   {
@@ -29,7 +31,7 @@ export const graphics = [
     fill: "#CBCBCB",
     metadata: {},
     id: "SY15tkntkk8S1PudoMfRI",
-    preview: "https://ik.imagekit.io/scenify/1635011631415_820612.png",
+    preview: `${baseURL}/elements/triangle.png`,
   },
   {
     left: 0,
@@ -67,7 +69,7 @@ export const graphics = [
     ],
     fill: "#CBCBCB",
     metadata: {},
-    preview: "https://ik.imagekit.io/scenify/1635014101144_519480.png",
+    preview: `${baseURL}/elements/hexagon.png`,
     id: "9VWsxoB_O8LSAkCIRjNFY",
   },
   {
@@ -348,7 +350,7 @@ export const graphics = [
     ],
     fill: "#CBCBCB",
     metadata: {},
-    preview: "https://ik.imagekit.io/scenify/1635014323800_275038.png",
+    preview: `${baseURL}/elements/heart.png`,
     id: "3w9KPQbyeUe3kgtwpMZx4",
   },
   {
