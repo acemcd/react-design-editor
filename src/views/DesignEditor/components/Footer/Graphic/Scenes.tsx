@@ -20,7 +20,7 @@ const Scenes = () => {
   const { setScenes, setCurrentScene, currentScene, setCurrentDesign, currentDesign } =
     React.useContext(DesignEditorContext)
   const editor = useEditor()
-  const [css] = useStyletron()
+  const [css, theme] = useStyletron()
   const [currentPreview, setCurrentPreview] = React.useState("")
   const frame = useFrame()
   const [draggedScene, setDraggedScene] = React.useState<IScene | null>(null)
@@ -172,7 +172,7 @@ const Scenes = () => {
     >
       <Block
         id="TimelineItemsContainer"
-        $style={{ padding: "0.25rem 0.75rem", background: "#ffffff", position: "relative" }}
+        $style={{ padding: "0.25rem 0.75rem", background: theme.colors.buttonSecondaryFill, position: "relative" }}
       >
         <div className={css({ display: "flex", alignItems: "center" })}>
           {contextMenuTimelineRequest.visible && <SceneContextMenu />}

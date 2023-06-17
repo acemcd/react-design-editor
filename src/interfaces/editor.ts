@@ -41,9 +41,14 @@ export interface Uploading {
 }
 export interface IUpload {
   id: string
-  contentType: string
-  folder: string
-  name: string
+  filename: string
+  originalname: string
+  description?: string
+  src: string
+  thumbnailSrc: string
   type: string
-  url: string
+  size?: number
+  tags?: string
+  createdAt?: string
+  updatedAt?: string
 }

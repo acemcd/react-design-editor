@@ -1,4 +1,6 @@
 import React from "react"
+import { useStyletron } from "baseui"
+
 import useAppContext from "~/hooks/useAppContext"
 import panelItems from "./panelItems"
 import useIsSidebarOpen from "~/hooks/useIsSidebarOpen"
@@ -26,12 +28,13 @@ const PanelsList = () => {
 
   // @ts-ignore
   const Component = panelItems[state.panel]
+  const [css, theme] = useStyletron()
 
   return (
     <Block
       id="EditorPanelItem"
       $style={{
-        background: "#ffffff",
+        background: theme.colors.buttonSecondaryFill,
         width: isSidebarOpen ? "306px" : 0,
         flex: "none",
         borderRight: "1px solid #d7d8e3",

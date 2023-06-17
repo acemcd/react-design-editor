@@ -10,7 +10,8 @@ import { Block } from "baseui/block"
 
 const Container = styled("div", (props) => ({
   width: "80px",
-  backgroundColor: props.$theme.colors.primary100,
+  // backgroundColor: props.$theme.colors.primary100,
+  backgroundColor: props.$theme.colors.buttonSecondaryFill,
   display: "flex",
   flex: "none",
 }))
@@ -53,7 +54,8 @@ const PanelListItem = ({ label, icon, activePanel, name }: any) => {
       $style={{
         width: "80px",
         height: "80px",
-        backgroundColor: name === activePanel ? theme.colors.white : theme.colors.primary100,
+        backgroundColor: theme.colors.buttonSecondaryFill,
+        // backgroundColor: name === activePanel ? theme.colors.white : theme.colors.primary100,
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
@@ -66,13 +68,13 @@ const PanelListItem = ({ label, icon, activePanel, name }: any) => {
         gap: "0.1rem",
         ":hover": {
           cursor: "pointer",
-          backgroundColor: theme.colors.white,
+          backgroundColor: theme.colors.backgroundPrimary,
           transition: "all 1s",
         },
       }}
     >
-      <Icon size={24} />
-      <div>{label}</div>
+      <Icon fill="#969697" size={24} />
+      <div style={{ color: "#969697" }}>{label}</div>
     </Block>
   )
 }

@@ -10,7 +10,7 @@ import useDesignEditorContext from "~/hooks/useDesignEditorContext"
 
 const Container = styled<"div", {}, Theme>("div", ({ $theme }) => ({
   height: "50px",
-  background: $theme.colors.white,
+  // background: $theme.colors.white,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",

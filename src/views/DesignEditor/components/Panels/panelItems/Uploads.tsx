@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Block } from "baseui/block"
 import AngleDoubleLeft from "~/components/Icons/AngleDoubleLeft"
 import Scrollable from "~/components/Scrollable"
@@ -8,15 +8,21 @@ import { useEditor } from "@layerhub-io/react"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
 import { nanoid } from "nanoid"
 import { captureFrame, loadVideoResource } from "~/utils/video"
-import { ILayer } from "@layerhub-io/types"
+import { ILayer, IStaticImage } from "@layerhub-io/types"
 import { toBase64 } from "~/utils/data"
+import { useSelector } from "react-redux"
+import { selectUploads } from "~/store/slices/uploads/selectors"
+
+const LOCAL_API_URL = "http://localhost:8080"
 
 export default function () {
   const inputFileRef = React.useRef<HTMLInputElement>(null)
-  const [uploads, setUploads] = React.useState<any[]>([])
+  // const [uploads, setUploads] = React.useState<any[]>([])
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
+  const uploads = useSelector(selectUploads)
 
+  useEffect(() => console.log({ uploads }))
   const handleDropFiles = async (files: FileList) => {
     const file = files[0]
 
@@ -38,7 +44,7 @@ export default function () {
       type: type,
     }
 
-    setUploads([...uploads, upload])
+    console.log([...uploads, upload])
   }
 
   const handleInputFileRefClick = () => {
@@ -50,7 +56,11 @@ export default function () {
   }
 
   const addImageToCanvas = (props: Partial<ILayer>) => {
-    editor.objects.add(props)
+    if (props.type === "StaticImage") {
+      const { src } = props as IStaticImage
+      console.log(src)
+      editor.objects.add({ ...props, src: LOCAL_API_URL + src })
+    }
   }
   return (
     <DropZone handleDropFiles={handleDropFiles}>
@@ -106,7 +116,7 @@ export default function () {
                   onClick={() => addImageToCanvas(upload)}
                 >
                   <div>
-                    <img width="100%" src={upload.preview ? upload.preview : upload.url} alt="preview" />
+                    <img width="100%" src={LOCAL_API_URL + upload.thumbnailSrc} alt="preview" />
                   </div>
                 </div>
               ))}

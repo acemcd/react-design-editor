@@ -10,7 +10,7 @@ const GraphicEditor = () => {
   return (
     <EditorContainer>
       <Navbar />
-      <div style={{ display: "flex", flex: 1 }}>
+      <div id="graphic-editor-main" style={{ display: "flex", flex: 1 }}>
         <Panels />
         <div style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative" }}>
           <Toolbox />

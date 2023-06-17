@@ -49,6 +49,7 @@ const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       ref={containerRef}
+      id="app-container"
       style={{
         flex: 1,
         display: "flex",

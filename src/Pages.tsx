@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react"
-import { LightTheme, ThemeProvider } from "baseui"
+import { LightTheme, DarkTheme, ThemeProvider } from "baseui"
 import { Drawer, SIZE } from "baseui/drawer"
 import { Button, KIND } from "baseui/button"
 import { useSelector } from "react-redux"
@@ -8,6 +8,7 @@ import { selectPages } from "./store/slices/design-editor/selectors"
 import { nanoid } from "nanoid"
 import { useAppDispatch } from "./store/store"
 import { addPage } from "./store/slices/design-editor/actions"
+import GiannaTheme from "./styles/giannaTheme"
 
 const Pages = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -22,7 +23,7 @@ const Pages = () => {
     )
   }
   return (
-    <ThemeProvider theme={LightTheme}>
+    <ThemeProvider theme={GiannaTheme}>
       <Button
         onClick={() => setIsOpen(true)}
         kind={KIND.secondary}

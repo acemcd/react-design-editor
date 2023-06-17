@@ -29,6 +29,7 @@ const ContextMenu = () => {
     return (
       <div // @ts-ignore
         onContextMenu={(e: Event) => e.preventDefault()}
+        id="app-context-menu"
         style={{
           position: "absolute",
           top: `${contextMenuRequest.top}px`,

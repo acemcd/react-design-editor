@@ -53,7 +53,8 @@ class ApiService {
     return new Promise(async (resolve, reject) => {
       try {
         const { data } = await this.base.get("/uploads")
-        resolve(data.data)
+        console.log({ data })
+        resolve(data)
       } catch (err) {
         reject(err)
       }

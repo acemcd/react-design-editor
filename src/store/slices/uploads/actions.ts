@@ -14,6 +14,7 @@ export const getUploads = createAsyncThunk<void, never, { rejectValue: Record<st
   async (_, { rejectWithValue, dispatch }) => {
     try {
       const uploads = await api.getUploads()
+      console.log({ uploads })
       dispatch(setUploads(uploads))
     } catch (err) {
       return rejectWithValue((err as any).response?.data?.error.data || null)
@@ -42,6 +43,7 @@ export const uploadFile = createAsyncThunk<void, { file: File }, any>(
         })
       },
     })
+    // refetch uploads
     const uploadedFile = await api.updateUploadFile({ name: updatedFileName })
     dispatch(closeUploading())
     dispatch(setUploads([uploadedFile]))

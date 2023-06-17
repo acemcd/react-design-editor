@@ -1,5 +1,6 @@
 import React from "react"
 import { Block } from "baseui/block"
+import { useStyletron } from "baseui"
 import Common from "./Common"
 import useAppContext from "~/hooks/useAppContext"
 import { useActiveObject, useEditor } from "@layerhub-io/react"
@@ -32,11 +33,13 @@ const Canvas = () => {
 
   return (
     <Block
+      id="CanvasFill"
       $style={{
         flex: 1,
         display: "flex",
         alignItems: "center",
         padding: "0 12px",
+
         justifyContent: "space-between",
       }}
     >

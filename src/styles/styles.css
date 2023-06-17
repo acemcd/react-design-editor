@@ -40,3 +40,7 @@ input[type="number"] {
 .react-player video {
     max-height: 740px;
 }
+
+#EditorPanelList svg:hover {
+    fill: #fff !important;
+}

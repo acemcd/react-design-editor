@@ -14,80 +14,91 @@ const SelectEditor = () => {
   return (
     <Block
       $style={{
-        height: "100vh",
-        width: "100vw",
-        background: "#ffffff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundImage: "url(g-admin.png)",
+        backgroundBlendMode: "screen",
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <Block>
-        <Block
-          $style={{
-            display: "flex",
-            gap: "2rem",
-          }}
-        >
+      <Block
+        id="select-editor"
+        $style={{
+          height: "100vh",
+          width: "100vw",
+          // background: "#ffffff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Block>
           <Block
-            onClick={() => setSelectedEditor("GRAPHIC")}
             $style={{
-              height: "180px",
-              width: "180px",
-              background: selectedEditor === "GRAPHIC" ? "#000000" : "rgb(231, 236, 239)",
-              color: selectedEditor === "GRAPHIC" ? "#ffffff" : "#333333",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              flexDirection: "column",
-              gap: "0.5rem",
+              gap: "2rem",
             }}
           >
-            <Images size={34} />
-            <Block>Graphic</Block>
+            <Block
+              onClick={() => setSelectedEditor("GRAPHIC")}
+              $style={{
+                height: "180px",
+                width: "180px",
+                background: selectedEditor === "GRAPHIC" ? "#000000" : "rgb(231, 236, 239)",
+                color: selectedEditor === "GRAPHIC" ? "#ffffff" : "#333333",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                flexDirection: "column",
+                gap: "0.5rem",
+              }}
+            >
+              <Images size={34} />
+              <Block>Graphic</Block>
+            </Block>
+            <Block
+              onClick={() => setSelectedEditor("PRESENTATION")}
+              $style={{
+                height: "180px",
+                width: "180px",
+                background: selectedEditor === "PRESENTATION" ? "#000000" : "rgb(231, 236, 239)",
+                color: selectedEditor === "PRESENTATION" ? "#ffffff" : "#333333",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                flexDirection: "column",
+                gap: "0.5rem",
+              }}
+            >
+              <Presentation size={36} />
+              <Block>Presentation</Block>
+            </Block>
+            <Block
+              onClick={() => setSelectedEditor("VIDEO")}
+              $style={{
+                height: "180px",
+                width: "180px",
+                background: selectedEditor === "VIDEO" ? "#000000" : "rgb(231, 236, 239)",
+                color: selectedEditor === "VIDEO" ? "#ffffff" : "#333333",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                flexDirection: "column",
+                gap: "0.5rem",
+              }}
+            >
+              <Video size={36} />
+              <Block>Video</Block>
+            </Block>
           </Block>
-          <Block
-            onClick={() => setSelectedEditor("PRESENTATION")}
-            $style={{
-              height: "180px",
-              width: "180px",
-              background: selectedEditor === "PRESENTATION" ? "#000000" : "rgb(231, 236, 239)",
-              color: selectedEditor === "PRESENTATION" ? "#ffffff" : "#333333",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              flexDirection: "column",
-              gap: "0.5rem",
-            }}
-          >
-            <Presentation size={36} />
-            <Block>Presentation</Block>
+          <Block $style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
+            <Button style={{ width: "180px" }} onClick={() => setEditorType(selectedEditor)}>
+              Continue
+            </Button>
           </Block>
-          <Block
-            onClick={() => setSelectedEditor("VIDEO")}
-            $style={{
-              height: "180px",
-              width: "180px",
-              background: selectedEditor === "VIDEO" ? "#000000" : "rgb(231, 236, 239)",
-              color: selectedEditor === "VIDEO" ? "#ffffff" : "#333333",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              flexDirection: "column",
-              gap: "0.5rem",
-            }}
-          >
-            <Video size={36} />
-            <Block>Video</Block>
-          </Block>
-        </Block>
-        <Block $style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
-          <Button style={{ width: "180px" }} onClick={() => setEditorType(selectedEditor)}>
-            Continue
-          </Button>
         </Block>
       </Block>
     </Block>

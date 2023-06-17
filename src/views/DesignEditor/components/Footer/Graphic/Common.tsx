@@ -12,7 +12,8 @@ import { PLACEMENT } from "baseui/toast"
 
 const Container = styled<"div", {}, Theme>("div", ({ $theme }) => ({
   height: "50px",
-  background: $theme.colors.white,
+  // background: $theme.colors.white,
+  background: $theme.colors.buttonSecondaryFill,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -20,7 +21,7 @@ const Container = styled<"div", {}, Theme>("div", ({ $theme }) => ({
 
 interface Options {
   zoomRatio: number
-  zoomRatioTemp: number,
+  zoomRatioTemp: number
 }
 
 const Common = () => {
@@ -28,7 +29,7 @@ const Common = () => {
   const zoomMax = 240
   const [options, setOptions] = React.useState<Options>({
     zoomRatio: 20,
-    zoomRatioTemp: 20
+    zoomRatioTemp: 20,
   })
   const editor = useEditor()
   const zoomRatio: number = useZoomRatio()

@@ -14,10 +14,12 @@ import { loadVideoEditorAssets } from "~/utils/video"
 import DesignTitle from "./DesignTitle"
 import { IDesign } from "~/interfaces/DesignEditor"
 import Github from "~/components/Icons/Github"
+import GiannaTheme from "~/styles/giannaTheme"
 
 const Container = styled<"div", {}, Theme>("div", ({ $theme }) => ({
   height: "64px",
-  background: $theme.colors.black,
+  background: $theme.colors.backgroundPrimary,
+  // background: $theme.colors.black,
   display: "grid",
   padding: "0 1.25rem",
   gridTemplateColumns: "380px 1fr 380px",
@@ -260,7 +262,7 @@ const Navbar = () => {
 
   return (
     // @ts-ignore
-    <ThemeProvider theme={DarkTheme}>
+    <ThemeProvider theme={GiannaTheme}>
       <Container>
         <div style={{ color: "#ffffff" }}>
           <Logo size={36} />

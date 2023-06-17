@@ -14,6 +14,7 @@ const initialState: UploadsState = {
 
 export const uploadsReducer = createReducer(initialState, (builder) => {
   builder.addCase(setUploads, (state, { payload }) => {
+    console.log({ msg: "reducer", payload })
     state.uploads.unshift(...payload)
   })
   builder.addCase(setUploading, (state, { payload }) => {

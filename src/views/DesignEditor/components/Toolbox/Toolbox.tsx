@@ -1,5 +1,6 @@
 import React from "react"
 import { useActiveObject, useEditor } from "@layerhub-io/react"
+import { useStyletron } from "baseui"
 import getSelectionType from "~/utils/get-selection-type"
 import { styled } from "baseui"
 import Items from "./Items"
@@ -19,6 +20,8 @@ const Container = styled("div", (props) => ({
 }))
 
 const Toolbox = () => {
+  const [css, theme] = useStyletron()
+
   const [state, setState] = React.useState<ToolboxState>({ toolbox: "Text" })
   const { setActiveSubMenu } = useAppContext()
   const activeObject = useActiveObject() as ILayer
@@ -64,7 +67,15 @@ const Toolbox = () => {
   // @ts-ignore
   const Component = Items[state.toolbox]
 
-  return <Container>{Component ? <Component /> : state.toolbox}</Container>
+  return (
+    <Container
+      $style={{
+        backgroundColor: theme.colors.buttonSecondaryFill,
+      }}
+    >
+      {Component ? <Component /> : state.toolbox}
+    </Container>
+  )
 }
 
 export default Toolbox

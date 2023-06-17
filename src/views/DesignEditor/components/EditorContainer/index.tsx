@@ -4,12 +4,13 @@ import { Block } from "baseui/block"
 const EditorContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <Block
+      id="editor-container"
       $style={{
         width: "100vw",
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        background: "#FFFFFF",
+        // background: "#FFFFFF",
         fontFamily: "Poppins",
       }}
     >
